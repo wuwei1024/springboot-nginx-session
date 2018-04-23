@@ -31,7 +31,7 @@ public class ScheduledTask {
     private static Logger logger = Logger.getLogger(ScheduledTask.class.getName());
     private static final String LOCK_1 = "lock1";
     private static final String LOCK_2 = "lock2";
-    private static final String LOCK_3 = "lock2";
+    private static final String LOCK_3 = "lock3";
 
     @PostConstruct
     public void getRedisOperations() {
