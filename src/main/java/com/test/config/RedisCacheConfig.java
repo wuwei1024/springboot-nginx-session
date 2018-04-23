@@ -17,7 +17,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 
 @Configuration
 @EnableCaching
-@EnableRedisHttpSession
+@EnableRedisHttpSession //解决nginx分布式下session不能共享的问题
 public class RedisCacheConfig extends CachingConfigurerSupport {
 
     @Bean
