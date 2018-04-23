@@ -1,4 +1,4 @@
-package com.test.util;
+package com.test.utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -10,12 +10,12 @@ import java.util.Map;
  * @date: 2018/4/23 15:38
  */
 
-public class MyObjectUtils {
+public class MyObjectUtil {
 
     /**
      * 构造器私有，防止外部实例化
      */
-    private MyObjectUtils() {
+    private MyObjectUtil() {
     }
 
     /**
