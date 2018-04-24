@@ -19,11 +19,11 @@ public class Consumer {
         // 1. 创建ConnectionFactory
         ConnectionFactory factory = new ActiveMQConnectionFactory(URL);
         // 2. 创建Connection
-        Connection con = factory.createConnection();
+        Connection connection = factory.createConnection();
         // 3. 启动连接
-        con.start();
+        connection.start();
         // 4. 创建会话
-        Session session = con.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
         // 5. 创建一个目标【与队列模式的区别就在这里，相当于订阅了该主题】
         Destination dest = session.createTopic(TOPIC_NAME);
         // 6. 创建一个消费者
@@ -38,6 +38,8 @@ public class Consumer {
             }
         });
         // 先不关闭，不然还没接收到消息就关闭了
-        //con.close();
+//        consumer.close();
+//        session.close();
+//        connection.close();
     }
 }
