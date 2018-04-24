@@ -1,4 +1,4 @@
-package com.test.activemq;
+package com.test.activemq.point2point;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -11,11 +11,13 @@ import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 /**
+ * 生产者
+ *
  * @author: wuwei
  * @date: 2018/4/23 17:50
  */
 
-public class Proceducer {
+public class Producer {
     private final static String URL = "tcp://localhost:61616";
     /**
      * 中间件队列名

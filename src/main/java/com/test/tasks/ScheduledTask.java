@@ -42,7 +42,7 @@ public class ScheduledTask {
         zSetOperations = redisTemplate.opsForZSet();
     }
 
-    @Scheduled(fixedDelay = 3000)
+    @Scheduled(fixedDelay = 60 * 1000)
     public void test() {
         cachedThreadPool.execute(this::test1);
         cachedThreadPool.execute(this::test2);

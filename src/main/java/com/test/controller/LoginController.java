@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * @date: 2018/4/12 9:15
  */
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/user")
 public class LoginController {
 
     @Autowired
