@@ -1,4 +1,4 @@
-package com.test.jms;
+package com.test.activemq;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
 public class MsgConsumer {
     @JmsListener(destination = "sample.queue")
     public void receiveQueue(String msg) {
-        System.out.println(msg);
+        System.out.println("MsgConsumer: " + msg);
     }
 }
