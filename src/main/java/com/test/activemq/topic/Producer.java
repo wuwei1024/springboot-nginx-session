@@ -1,29 +1,19 @@
-package com.test.activemq.point2point;
-
-import javax.jms.Connection;
-import javax.jms.ConnectionFactory;
-import javax.jms.Destination;
-import javax.jms.JMSException;
-import javax.jms.MessageProducer;
-import javax.jms.Session;
-import javax.jms.TextMessage;
+package com.test.activemq.topic;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+import javax.jms.*;
+
 /**
- * 生产者
+ * 发布者
  *
  * @author: wuwei
- * @date: 2018/4/23 17:50
+ * @date: 2018/4/24 9:34
  */
 
 public class Producer {
     private final static String URL = "tcp://localhost:61616";
-    /**
-     * 中间件队列名
-     * 参考：https://blog.csdn.net/zcl_love_wx/article/details/78406416
-     */
-    private final static String QUEUE_NAME = "queue-name";
+    private final static String TOPIC_NAME = "topic-name";
 
     public static void main(String[] args) throws JMSException {
         // 1. 创建ConnectionFactory
@@ -34,8 +24,8 @@ public class Producer {
         con.start();
         // 4. 创建会话
         Session session = con.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        // 5. 创建一个目标
-        Destination dest = session.createQueue(QUEUE_NAME);
+        // 5. 创建一个目标【与队列模式的区别就在这里，相当于发布一个主题】
+        Destination dest = session.createTopic(TOPIC_NAME);
         // 6. 创建一个生产者
         MessageProducer pro = session.createProducer(dest);
         for (int i = 0; i < 10; i++) {
