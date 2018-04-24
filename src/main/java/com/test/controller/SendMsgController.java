@@ -14,7 +14,7 @@ import javax.jms.Queue;
  */
 @RestController
 @RequestMapping("/mq")
-public class ProducerController {
+public class SendMsgController {
     @Autowired
     private JmsMessagingTemplate jmsMessagingTemplate;
     @Autowired

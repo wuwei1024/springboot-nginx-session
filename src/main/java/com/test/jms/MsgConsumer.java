@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @date: 2018/4/24 10:18
  */
 @Component
-public class Consumer {
+public class MsgConsumer {
     @JmsListener(destination = "sample.queue")
     public void receiveQueue(String msg) {
         System.out.println(msg);
