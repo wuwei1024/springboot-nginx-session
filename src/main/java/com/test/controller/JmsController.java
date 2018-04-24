@@ -15,7 +15,7 @@ import javax.jms.Topic;
  */
 @RestController
 @RequestMapping("/mq")
-public class SendMsgController {
+public class JmsController {
     @Autowired
     private JmsMessagingTemplate jmsMessagingTemplate;
     @Autowired
