@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.jms.Queue;
+import javax.jms.Topic;
 
 /**
  * @author: wuwei
@@ -19,10 +20,13 @@ public class SendMsgController {
     private JmsMessagingTemplate jmsMessagingTemplate;
     @Autowired
     private Queue queue;
+    @Autowired
+    private Topic topic;
 
     @RequestMapping("/sendMsg")
     public String sendMsg(@RequestParam("msg") String msg) {
         jmsMessagingTemplate.convertAndSend(queue, msg);
-        return "Message has been sent successfully!";
+        jmsMessagingTemplate.convertAndSend(topic, msg);
+        return msg + " has been sent successfully!";
     }
 }

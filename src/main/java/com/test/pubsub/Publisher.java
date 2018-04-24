@@ -20,7 +20,7 @@ public class Publisher {
     private RedisTemplate<String, String> redisTemplate;
     private static final String MESSAGE = "当前时间：%s, 消息内容：%f";
 
-    @Scheduled(fixedRate = 60 * 1000)
+    @Scheduled(initialDelay = 60 * 1000, fixedRate = 60 * 1000)
     public void sendMessage() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String msg = String.format(MESSAGE, sdf.format(new Date()), Math.random());

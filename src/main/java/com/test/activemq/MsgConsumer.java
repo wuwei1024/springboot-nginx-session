@@ -9,8 +9,13 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class MsgConsumer {
-    @JmsListener(destination = "sample.queue")
+    @JmsListener(destination = "sample.queue", containerFactory = "jmsListenerContainerQueue")
     public void receiveQueue(String msg) {
-        System.out.println("MsgConsumer: " + msg);
+        System.out.println("Queue MsgConsumer: " + msg);
+    }
+
+    @JmsListener(destination = "sample.topic", containerFactory = "jmsListenerContainerTopic")
+    public void receiveTopic(String msg) {
+        System.out.println("Topic MsgConsumer: " + msg);
     }
 }

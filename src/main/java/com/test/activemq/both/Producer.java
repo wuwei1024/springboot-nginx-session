@@ -24,8 +24,8 @@ public class Producer {
     private Topic topic;
     private static int count = 0;
 
-    @Scheduled(fixedDelay = 3 * 1000)
-    public void send() {
+    @Scheduled(initialDelay = 60 * 1000, fixedDelay = 60 * 1000)
+    public void sendMsg() {
         jmsMessagingTemplate.convertAndSend(queue, "hi, activeMQ(queue), index=" + count);
         jmsMessagingTemplate.convertAndSend(topic, "hi, activeMQ(topic), index=" + count++);
     }

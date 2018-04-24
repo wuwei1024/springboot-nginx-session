@@ -7,8 +7,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import javax.jms.Queue;
-
 /**
  * @author: wuwei
  * @date: 2018/4/1 12:07
