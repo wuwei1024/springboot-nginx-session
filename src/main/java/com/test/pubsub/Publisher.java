@@ -14,7 +14,7 @@ import java.util.Date;
  * @date: 2018/3/23 15:41
  */
 @Component
-@EnableScheduling //开启定时器功能
+@EnableScheduling
 public class Publisher {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
